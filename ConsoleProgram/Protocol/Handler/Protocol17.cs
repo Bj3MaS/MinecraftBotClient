@@ -75,7 +75,7 @@ namespace ConsoleProgram.Protocol.Handler
 
         private static byte[] concatBytes(params byte[][] bytes)
         {
-            List<byte> result = new List<byte>();
+            List<byte> result = new List<byte>(); 
             foreach (byte[] array in bytes)
                 result.AddRange(array);
             return result.ToArray();
