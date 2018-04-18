@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Sockets;
@@ -28,7 +28,7 @@ namespace ConsoleProgram.Protocol.Handler
         {
 
             string version = "";
-            TcpClient tcp = new TcpClient("localhost", 58580);
+            TcpClient tcp = new TcpClient("mc.strictlyvanilla.org", 25565);
             tcp.ReceiveBufferSize = 1024 * 1024;
 
             byte[] packet_id = GetVarInt(0);
@@ -55,10 +55,13 @@ namespace ConsoleProgram.Protocol.Handler
             if (readNextVarInt(packetData) == 0x00)
             {
                 string result = readNextString(packetData);
+                Console.WriteLine(result);
+                return true;
                 var test = 0;
             }
-             
+
             return false;
+            
         }
 
         private static byte[] GetVarInt(int paramInt)
@@ -108,7 +111,7 @@ namespace ConsoleProgram.Protocol.Handler
                     //read += s.Read(buffer, start + read, offset - read);
                 }
                 else read += _client.Client.Receive(buffer, start + read, offset - read, f);
-                Console.WriteLine(read);
+                //Console.WriteLine(read);
             }
         }
 
