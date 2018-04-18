@@ -1,0 +1,4 @@
+# MinecraftBotClient
+A small console program that I test and teach myself how to make and use packet. This program also mad to understand packethandling and handshake.
+
+link to minecraft protocols: http://wiki.vg/Protocol
